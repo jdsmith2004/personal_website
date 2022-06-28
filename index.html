@@ -22,7 +22,7 @@
   <script defer src="scripts/index.js"></script>
 </head>
 
-<body>
+<body id="homePage">
   <!--========== HEADER ==========-->
   <!-- <header class="header">
       <div class="header__container">
@@ -43,60 +43,45 @@
   <span id="goals">
     <aside id="goalBox">
       <span class="goalBoxes" class="gridBoxes" id="goalOne">
-        <img
-          id="imageBoxOne"
-          src="images/checkBoxIcons/flameV3.png"
-          alt="flaming checkmark"
-          class="flamingCheckmark"
-        />
+        <img id="imageBoxOne" src="images/icons/flameIcon.png" alt="flaming checkmark" class="flamingCheckmark" />
       </span>
       <span class="goalBoxes" class="gridBoxes" id="goalTwo">
-        <img
-          id="imageBoxTwo"
-          src="images/checkBoxIcons/flameV3.png"
-          alt="flaming checkmark"
-          class="flamingCheckmark"
-        />
+        <img id="imageBoxTwo" src="images/icons/flameIcon.png" alt="flaming checkmark" class="flamingCheckmark" />
       </span>
       <span class="goalBoxes" class="gridBoxes" id="goalThree">
-        <img
-          id="imageBoxThree"
-          src="images/checkBoxIcons/flameV3.png"
-          alt="flaming checkmark"
-          class="flamingCheckmark"
-        />
+        <img id="imageBoxThree" src="images/icons/flameIcon.png" alt="flaming checkmark" class="flamingCheckmark" />
       </span>
       <span class="goalBoxes" class="gridBoxes" id="goalFour">
-        <img
-          id="imageBoxFour"
-          src="images/checkBoxIcons/flameV3.png"
-          alt="flaming checkmark"
-          class="flamingCheckmark"
-        />
+        <img id="imageBoxFour" src="images/icons/flameIcon.png" alt="flaming checkmark" class="flamingCheckmark" />
       </span>
       <span class="goalBoxes" class="gridBoxes" id="goalFive">
-        <img
-          id="imageBoxFive"
-          src="images/checkBoxIcons/flameV3.png"
-          alt="flaming checkmark"
-          class="flamingCheckmark"
-        />
+        <img id="imageBoxFive" src="images/icons/flameIcon.png" alt="flaming checkmark" class="flamingCheckmark" />
       </span>
       <b id="num">75</b>
       <span class="goalBoxes" class="gridBoxes" id="goalSix">
-        <img
-          id="imageBoxSix"
-          src="images/checkBoxIcons/flameV3.png"
-          alt="flaming checkmark"
-          class="flamingCheckmark"
-        />
+        <img id="imageBoxSix" src="images/icons/flameIcon.png" alt="flaming checkmark" class="flamingCheckmark" />
       </span>
     </aside>
   </span>
-  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-  <div class="elfsight-app-afc79939-0908-4960-994c-dcad327df269"></div>
+  <!-- <div class="container"> -->
+  <div class="notification"> </div>
+  <div class="weather-container">
+    <div class="weather-icon">
+      <img src="" alt="">
+      <p class="temperature-description"> - </p>
+    </div>
+    <div class="temperature-value">
+      <p>- °<span>C</span></p>
+    </div>
+
+    <div class="location">
+      <p>-</p>
+    </div>
+    <div id="date-time"></div>
+    <!-- </div> -->
+  </div>
   <div class="welcome">
-    <p id="hello">Hello "NAME"</p>
+    <p id="hello">Hi Jeffrey</p>
     <p>motivational message </p>
   </div>
   <a href="settings.html"><img src="images/icons/gearIcon.png" alt="settings icon" id="settingsIcon"></a>
