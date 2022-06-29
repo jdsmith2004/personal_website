@@ -16,7 +16,7 @@
   --first-color-light: #57dcea;
   --title-color: #19181B;
   --text-color-male-light: white;
-  --body-color: #57dcea;
+  --body-color: #0e8693;
   --container-color: #eb6ab1;
 
   /*========== Font and typography ==========*/
@@ -34,7 +34,7 @@
 }
 
 #homePage {
-  background-image: url(/images/backrounds/backgroundImage.jpeg);
+  background-image: url(/images/backrounds/snowyNorthernLights.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -129,18 +129,38 @@
 } */
 
 /* glowing animation for goals */
-#goalBox:before {
+#goalBox {
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* #goalBox:before {
   content: '';
   background: linear-gradient(45deg, var(--primary-color), #68ad94, var(--sidebar-transparent));
   position: absolute;
   top: -2px;
   left: -2px;
-  background-size: 400%;
+  background-size: 800%;
   z-index: -1;
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
+  animation: glowing 100s linear infinite;
   transition: opacity .3s ease-in-out;
   border-radius: 10px;
 }
@@ -157,7 +177,7 @@
   100% {
     background-position: 0 0;
   }
-}
+} */
 
 /* checkmark size */
 .flamingCheckmark {
@@ -167,7 +187,7 @@
 }
 
 .goalBoxes {
-  border: 0px solid black;
+  border: 1px solid black;
   border-radius: 10px;
 }
 
@@ -241,6 +261,23 @@
   border-style: 100% 3px;
 }
 
+.randomMotivationalMessage {
+  display: flexbox;
+  position: absolute;
+  /* PUT TEXT AT THE BOTTOM OF THE SCREEN */
+  top: 50%;
+  top: 96%;
+  /*PUT TEXT AT THE TOP OF THE SCREEN*/
+  /* top: 0%;
+  padding-top: 50px;  */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color-male-light);
+}
+
 /* settings icon to bottom left */
 #settingsIcon {
   height: 40px;
@@ -252,7 +289,9 @@
 
 /* weather widget on homepage */
 .weather-container {
-  background-image: url("https://unsplash.it/600/400?image=1043&blur");
+  background-image: url("/images/backrounds/starrySkiMountain.jpg");
+  /* filter: blur(4px);
+  -webkit-filter: blur(4px); */
   background-size: cover;
   border-radius: 20px;
   box-shadow: 25px 25px 40px 0px rgba(0, 0, 0, 0.33);
@@ -268,20 +307,21 @@
 
   border-radius: 10px;
   padding-bottom: 50px;
+  z-index: -1;
 }
 
 .weather-container {
   display: grid;
-  grid-template-columns: repeat(6, 50px);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 25px);
   grid-column-gap: 0px;
   grid-row-gap: 5px;
 
+  width: 20%;
   padding: 15px 15px 15px 20px;
   padding: 15px;
   margin: 15px;
 }
-
 
 .location {
   grid-row: 1/2;
@@ -297,9 +337,10 @@
 
   justify-self: start;
   align-self: center;
+  z-index: 2;
 }
+
 .weather-icon {
-  display: flex;
   justify-content: center;
   align-items: center;
   grid-row: 3/5;
@@ -307,14 +348,19 @@
 
   display: block;
   margin: 0 8px 0 0;
+  z-index: 2;
 }
+
 .weather-icon p {
   text-transform: capitalize;
 }
+
 .weather-icon img {
+  display: block;
   float: right;
   height: 100%;
 }
+
 .temperature-value {
   grid-row: 1/5;
   grid-column: 4/7;
@@ -326,10 +372,6 @@
   text-align: center;
   cursor: pointer;
   font-size: 4vw;
-}
-
-
-.temperature-description {
 }
 
 .app-title {
@@ -358,31 +400,18 @@
   text-align: center;
   padding: 10px 0;
 }
+
 .weather-icon img {
   display: block;
   margin: 0 auto;
 }
-.temperature-value p:hover {}
-
-
-.temperature-description {}
-
-.temperature-description p {
-  padding: 8px;
-  margin: 0;
-  color: red;
-  text-align: center;
-  font-size: 1vw;
-}
-
-.location {}
 
 .location p {
   margin: 0;
   padding: 0;
   color: white;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 1vw;
 }
 
 /* settings page */
@@ -491,3 +520,47 @@ li:hover {
     --smaller-font-size: .813rem;
   }
 }
+
+/* SIGN-UP/SIGNIN PAGE */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+#signupBody {
+  background: var(--body-color);
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 100;
+  text-align: center;
+}
+
+#signup {
+  background: var(--body-color);
+  color: white;
+  display: inline-block;
+  padding: 0em 2em;
+  margin: 6em auto;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
+  padding: 100px;
+}
+
+.container .navigation ol {
+  list-style: none;
+}
+.container .navigation li {
+  display: inline;
+  list-style-type: none;
+}
+.navigation a {
+  text-decoration: none;
+}
+#sign-form li {
+  list-style-type: none;
+}
+.questions li {
+  display: block;
+  padding: 15px;
+}
+

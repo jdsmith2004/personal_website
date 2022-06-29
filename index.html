@@ -19,7 +19,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obliterate</title>
   <link rel="stylesheet" type="text/css" href="styles/index.css" />
-  <script defer src="scripts/index.js"></script>
+  <script defer src="scripts/goalBox.js"></script>
+  <script defer src="scripts/weatherAPI.js"></script>
+  <script defer src="scripts/motivationMessage.js"></script>
 </head>
 
 <body id="homePage">
@@ -71,7 +73,7 @@
       <p class="temperature-description"> - </p>
     </div>
     <div class="temperature-value">
-      <p>- °<span>C</span></p>
+      <p>- °<span>F</span></p>
     </div>
 
     <div class="location">
@@ -82,8 +84,9 @@
   </div>
   <div class="welcome">
     <p id="hello">Hi Jeffrey</p>
-    <p>motivational message </p>
+    <!-- <p>motivational message </p> -->
   </div>
+  <div class="randomMotivationalMessage"><p> - </p></div>
   <a href="settings.html"><img src="images/icons/gearIcon.png" alt="settings icon" id="settingsIcon"></a>
 </body>
 
