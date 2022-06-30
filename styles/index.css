@@ -34,7 +34,7 @@
 }
 
 #homePage {
-  background-image: url(/images/icons/flameIcon.png);
+  background-image: url(/images/backgrounds/snowyNorthernLights.jpg), url(https://jdsmith2004.github.io/personal_website/images/backgrounds/snowyNorthernLights.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -289,7 +289,7 @@
 
 /* weather widget on homepage */
 .weather-container {
-  background-image: url("/images/backgrounds/starrySkiMountain.jpg");
+  background-image: url("/images/backgrounds/starrySkiMountain.jpg"), url(https://jdsmith2004.github.io/personal_website/images/backgrounds/starrySkiMountain.jpg);
   /* filter: blur(4px);
   -webkit-filter: blur(4px); */
   background-size: cover;
