@@ -1,3 +1,6 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 // show a message with a type of the input
 function showMessage(input, message, type) {
 	// get the small element and set the message
@@ -40,7 +43,6 @@ function validateEmail(input, requiredMsg, invalidMsg) {
 }
 
 const form = document.querySelector("#signup");
-
 const NAME_REQUIRED = "Please enter your name";
 const EMAIL_REQUIRED = "Please enter your email";
 const EMAIL_INVALID = "Please enter a correct email address format";
@@ -57,6 +59,23 @@ form.addEventListener("submit", function (event) {
     let passwordValid = hasValue(form.elements["password"], PASSWORD_REQUIRED);
 	// if valid, submit the form.
 	if (nameValid && emailValid && passwordValid) {
-		console.log(nameValid, emailValid)
+        const firebaseConfig = {
+            apiKey: "AIzaSyCyRULcF-4DAFzapesMfowJLY0F7R8ddZg",
+            authDomain: "obliteration-b71e1.firebaseapp.com",
+            projectId: "obliteration-b71e1",
+            storageBucket: "obliteration-b71e1.appspot.com",
+            messagingSenderId: "259747363387",
+            appId: "1:259747363387:web:e05ed2c11420566bdbfa1e",
+            measurementId: "G-C7FT1KSJB1"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        console.log(email,password)
+        //create user
+        auth.createUserWithEmailAndPassword(email, password)
 	}
+    console.log(`Error: invalid name or password`)
 });
