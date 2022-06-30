@@ -2,11 +2,11 @@ function testFunc(goalBox) {
   let image = goalBox.children[0].style.visibility
   console.log(image)
   if (image == "hidden") {
-    goalBox.children[0].style.visibility = "visible"
-    goalBox.classList.add("animateOne")
+    goalBox.children[0].style.visibility = "visible";
+    goalBox.classList.add("animateOne");
   } else {
     goalBox.children[0].style.visibility = "hidden";
-    goalBox.classList.remove("animateOne")
+    goalBox.classList.remove("animateOne");
   }
   console.log('success')
 }

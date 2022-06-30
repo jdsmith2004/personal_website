@@ -1,6 +1,5 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+const auth = firebase.auth();
+
 // show a message with a type of the input
 function showMessage(input, message, type) {
 	// get the small element and set the message
@@ -42,40 +41,78 @@ function validateEmail(input, requiredMsg, invalidMsg) {
 	return true;
 }
 
-const form = document.querySelector("#signup");
+const signUpForm = document.querySelector("#sign-up-form");
 const NAME_REQUIRED = "Please enter your name";
 const EMAIL_REQUIRED = "Please enter your email";
 const EMAIL_INVALID = "Please enter a correct email address format";
 const PASSWORD_REQUIRED = "Please enter a valid password"
 
-form.addEventListener("submit", function (event) {
-	// stop form submission
+signUpForm.addEventListener("submit", function (event) {
+	// stop signUpForm submission
 	event.preventDefault();
 
-	// validate the form
-	let nameValid = hasValue(form.elements["name"], NAME_REQUIRED);
-	let emailValid = validateEmail(form.elements["email"], EMAIL_REQUIRED, 
+	// validate the signUpForm
+	let nameValid = hasValue(signUpForm.elements["name"], NAME_REQUIRED);
+	let emailValid = validateEmail(signUpForm.elements["email"], EMAIL_REQUIRED, 
     EMAIL_INVALID);
-    let passwordValid = hasValue(form.elements["password"], PASSWORD_REQUIRED);
-	// if valid, submit the form.
+    let passwordValid = hasValue(signUpForm.elements["password"], PASSWORD_REQUIRED);
+
+	userName = signUpForm.elements["name"].value.trim();
+	email = signUpForm.elements["email"].value.trim();
+	password = signUpForm.elements["password"].value.trim();
+
+	console.log(userName)
+	console.log(email)
+	console.log(password)
+	// if valid, submit the signUpForm.
 	if (nameValid && emailValid && passwordValid) {
-        const firebaseConfig = {
-            apiKey: "AIzaSyCyRULcF-4DAFzapesMfowJLY0F7R8ddZg",
-            authDomain: "obliteration-b71e1.firebaseapp.com",
-            projectId: "obliteration-b71e1",
-            storageBucket: "obliteration-b71e1.appspot.com",
-            messagingSenderId: "259747363387",
-            appId: "1:259747363387:web:e05ed2c11420566bdbfa1e",
-            measurementId: "G-C7FT1KSJB1"
-        };
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-        console.log(email,password)
         //create user
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password).then(cred => {
+			console.log(cred.user)
+		})
 	}
-    console.log(`Error: invalid name or password`)
+	signUpForm.reset();
+    // console.log(`Error: invalid name or password`)
 });
+
+const logout = document.querySelector('.logout-button');
+logout.addEventListener('click', (e) => {
+	e.preventDefault();
+	auth.signOut()
+})
+
+const signInForm = document.querySelector("#sign-in-form");
+signInForm.addEventListener("submit", function (event) {
+	// stop signUpForm submission
+	event.preventDefault();
+
+	// validate the signInForm
+	let emailValid = validateEmail(signInForm.elements["email"], EMAIL_REQUIRED, 
+    EMAIL_INVALID);
+    let passwordValid = hasValue(signInForm.elements["password"], PASSWORD_REQUIRED);
+
+	email = signInForm.elements["email"].value.trim();
+	password = signInForm.elements["password"].value.trim();
+
+	console.log(email)
+	console.log(password)
+	// if valid, submit the signInForm.
+	if (emailValid && passwordValid) {
+        //create user
+        auth.signInWithEmailAndPassword(email, password).then(cred => {
+			// display user object
+			// console.log(cred.user)
+		})
+	}
+	signInForm.reset();
+    // console.log(`Error: invalid name or password`)
+});
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+	if (user) {
+		console.log(`user logged in`);
+	} else if (!user) {
+		console.log(`user logged out`);
+	}
+})
+// module.exports = {}

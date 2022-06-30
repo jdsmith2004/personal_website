@@ -6,28 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/x-icon" href="images/logo/logoV1.png" />
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
-    <script defer src="scripts/signup.js"></script>
     <title>Sign-In</title>
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCyRULcF-4DAFzapesMfowJLY0F7R8ddZg",
+	    authDomain: "obliteration-b71e1.firebaseapp.com",
+	    projectId: "obliteration-b71e1",
+    	storageBucket: "obliteration-b71e1.appspot.com",
+    	messagingSenderId: "259747363387",
+	    appId: "1:259747363387:web:e05ed2c11420566bdbfa1e",
+	    measurementId: "G-C7FT1KSJB1"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="scripts/signup.js" defer></script>
+  <script src="scripts/signupAnimations.js" defer></script>
 </head>
 <body id="signupBody">
-    <form id="signup">
+    <div id="preferredAction">
+      <div>Welcome</div>
+      <button id='email-sign-in'>Sign In With Email</button>
+      <span>No Account?: </span>
+      <button id='email-sign-up'>Sign Up</button>
+    </div>
+    <form id="sign-up-form">
         <h1>Sign Up</h1>
         <div class="field">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Enter your fullname" />
+          <input type="text" id="signUpName" name="name" placeholder="Enter your fullname" value="jeffrey"/>
           <small></small>
         </div>
         <div class="field">
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email" placeholder="Enter your email address" />
+          <input type="text" id="signUpEmail" name="email" placeholder="Enter your email address" value="swampfirejeffrey@gmail.com"/>
           <small></small>
         </div>
         <div class="field">
           <label for="password">Password:</label>
-          <input type="password" name="password" id="password" placeholder="Super Top Secret Password" />
+          <input type="password" name="password" id="signUpPassword" placeholder="Super Top Secret Password" value="123456"/>
           <small></small>
         </div>
-        <button type="submit">Subscribe</button>
+        <button type="submit">Sign Up</button>
+      </form>
+      <form id="sign-in-form">
+        <h1>Sign In</h1>
+        <div class="field">
+          <label for="email">Email:</label>
+          <input type="text" id="signInEmail" name="email" placeholder="Enter your email address" value="swampfirejeffrey@gmail.com"/>
+          <small></small>
+        </div>
+        <div class="field">
+          <label for="password">Password:</label>
+          <input type="password" name="signInPassword" id="password" placeholder="Super Top Secret Password" value="123456"/>
+          <small></small>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+      <a href="#" class="logout-button">Sign Out</a>
 </body>
 
 </html>

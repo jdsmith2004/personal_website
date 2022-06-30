@@ -529,21 +529,60 @@ li:hover {
 }
 
 #signupBody {
-  background: var(--body-color);
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: 100;
-  text-align: center;
+  background-image: url('/images/backgrounds/stormyDock.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  /* background-size: contain;  */
+  background-size: cover;
+  /* prevent user from highlighting text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
 }
 
-#signup {
-  background: var(--body-color);
+#preferredAction {
+  background: var(--primary-color);
   color: white;
   display: inline-block;
   padding: 0em 2em;
   margin: 6em auto;
   box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
   padding: 100px;
+
+  /* center the box */
+  position: absolute;
+  align-content: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* box sizing */
+  height: 50%;
+  width: 30%;
+
+  display: grid;
+}
+#sign-up-form, #sign-in-form {
+  background: var(--primary-color);
+  color: white;
+  display: inline-block;
+  padding: 0em 2em;
+  margin: 6em auto;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
+  padding: 100px;
+  
+  /* center the box */
+  position: absolute;
+  align-content: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* box sizing */
+  height: 80%;
+  width: 50%;
 }
 
 .container .navigation ol {
