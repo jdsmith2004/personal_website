@@ -68,12 +68,15 @@ signUpForm.addEventListener("submit", function (event) {
 	if (nameValid && emailValid && passwordValid) {
         //create user
         auth.createUserWithEmailAndPassword(email, password).then(cred => {
+			cred.user.updateProfile({
+				displayName: userName
+			})
 			console.log(cred.user)
 		})
 	}
 	signUpForm.reset();
 
-	window.location.href = 'https://jdsmith2004.github.io/personal_website/index.html'
+	// window.location.href = 'https://jdsmith2004.github.io/personal_website/index.html'
     // console.log(`Error: invalid name or password`)
 });
 
@@ -103,11 +106,11 @@ signInForm.addEventListener("submit", function (event) {
         //create user
         auth.signInWithEmailAndPassword(email, password).then(cred => {
 			// display user object
-			// console.log(cred.user)
+			console.log(cred.user)
 		})
 	}
 	signInForm.reset();
-	window.location.href = 'https://jdsmith2004.github.io/personal_website/index.html'
+	// window.location.href = 'https://jdsmith2004.github.io/personal_website/index.html'
     // console.log(`Error: invalid name or password`)
 });
 // listen for auth status changes
