@@ -72,6 +72,8 @@ signUpForm.addEventListener("submit", function (event) {
 		})
 	}
 	signUpForm.reset();
+
+	window.location.href = 'https://jdsmith2004.github.io/personal_website/index.html'
     // console.log(`Error: invalid name or password`)
 });
 
@@ -105,6 +107,7 @@ signInForm.addEventListener("submit", function (event) {
 		})
 	}
 	signInForm.reset();
+	window.location.href = 'https://jdsmith2004.github.io/personal_website/index.html'
     // console.log(`Error: invalid name or password`)
 });
 // listen for auth status changes
