@@ -269,7 +269,7 @@
 
 /* settings icon to bottom left */
 #settingsIcon {
-  height: 40px;
+  height: 8%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -406,7 +406,7 @@
 /* settings start*/
 /* Style the tab */
 .settings-body {
-  background-image: url('/images/settings/pinkClouds.jpg');
+  background-image: url('/images/settings/pinkClouds.jpg'), url(https://jdsmith2004.github.io/personal_website/images/settings/pinkClouds.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
