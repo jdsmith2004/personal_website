@@ -117,6 +117,7 @@
   justify-content: center;
   border-radius: 5px;
 }
+
 /* glowing animation for goals */
 #goalBox {
   background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
@@ -406,6 +407,7 @@
 /* settings start*/
 /* Style the tab */
 .settings-body {
+  /* can't load the image because the css is in a styles folder so it can't find the images folder */
   background-image: url('/images/settings/pinkClouds.jpg'), url(https://jdsmith2004.github.io/personal_website/images/settings/pinkClouds.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -417,6 +419,7 @@
   -moz-user-select: none;
   user-select: none;
 }
+
 .tab {
   float: left;
   border: 1px solid #ccc;
@@ -466,9 +469,6 @@
   border-top-right-radius: var(--curve-radius-small);
   border-bottom-right-radius: var(--curve-radius-small);
 }
-.pinkClouds {
-  width: 100%;
-}
 .settings-container {
   position: fixed;
   top: 50%;
@@ -479,9 +479,20 @@
   border-radius: var(--curve-radius-big);
   height: 80%;
 }
+.containerHeight {
+  max-height: 100%;
+}
 #theme {
   display: block;
 }
+.themeImages {
+  border: 2px solid var(--primary-color);
+  max-height: fit-content;
+}
+.pinkClouds {
+  width: 100%;
+}
+
 /* SETTINGS END */
 /* SIGN-UP/SIGNIN PAGE */
 *,
@@ -502,6 +513,7 @@
   -moz-user-select: none;
   user-select: none;
 }
+
 .form-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -518,6 +530,7 @@
   width: 80%;
   height: 75%;
 }
+
 /* #preferredAction {
   background: var(--primary-color);
   color: white;
@@ -538,7 +551,8 @@
 
   display: grid;
 } */
-#sign-up-form, #sign-in-form {
+#sign-up-form,
+#sign-in-form {
   background: var(--primary-color);
   color: white;
   /* padding: 0em 2em; */
@@ -551,16 +565,22 @@
   place-self: center;
   /* box sizing */
 }
-#sign-up-form h1, #sign-in-form h1 {
+
+#sign-up-form h1,
+#sign-in-form h1 {
   padding-bottom: 25px;
 }
-#sign-up-form label, #sign-in-form label {
+
+#sign-up-form label,
+#sign-in-form label {
   display: block;
   text-align: left;
   padding-bottom: 5px;
   padding-top: 10px;
 }
-#sign-up-form button, #sign-in-form button {
+
+#sign-up-form button,
+#sign-in-form button {
   margin-top: 15px;
 
   width: auto;
@@ -574,32 +594,41 @@
   box-shadow: 0 6px 6px #06f;
   outline: none;
 }
+
 @keyframes gradient {
   0% {
-    background: radial-gradient(circle at center, rgba( 255, 125 , 125, 0 ) 0%, #fff 0%, #fff 100%);
+    background: radial-gradient(circle at center, rgba(255, 125, 125, 0) 0%, #fff 0%, #fff 100%);
   }
+
   25% {
     background: radial-gradient(circle at center, rgb(235, 106, 177, 0.3) 24%, #fff 25%, #fff 100%);
   }
+
   50% {
     background: radial-gradient(circle at center, rgb(235, 106, 177, 0.5) 49%, #fff 50%, #fff 100%);
   }
+
   75% {
     background: radial-gradient(circle at center, rgb(235, 106, 177, 0.8) 74%, #fff 75%, #fff 100%);
   }
+
   100% {
     color: #fff;
     background: radial-gradient(circle at center, rgb(235, 106, 177) 99%, #fff 100%, #fff 100%);
   }
 }
-#sign-up-form button:active, #sign-in-form button:active {
-    /* set time duration to your needs */
-    animation: gradient 100ms;
-    background: rgb(235, 106, 177);
-    color: #fff;
-    box-shadow: none;
+
+#sign-up-form button:active,
+#sign-in-form button:active {
+  /* set time duration to your needs */
+  animation: gradient 100ms;
+  background: rgb(235, 106, 177);
+  color: #fff;
+  box-shadow: none;
 }
-#sign-up-form input, #sign-in-form input {
+
+#sign-up-form input,
+#sign-in-form input {
   font-family: 'Roboto', sans-serif;
   color: #333;
   font-size: 1.2rem;
@@ -614,21 +643,25 @@
   border-bottom: 0.3rem solid transparent;
   transition: all 0.3s;
 }
+
 .navigation ol {
   list-style: none;
 }
+
 .navigation li {
   display: inline;
   list-style-type: none;
 }
+
 .navigation a {
   text-decoration: none;
 }
+
 #sign-form li {
   list-style-type: none;
 }
+
 .questions li {
   display: block;
   padding: 15px;
 }
-
