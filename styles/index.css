@@ -58,7 +58,7 @@
   position: absolute;
   position: fixed;
   left: 50%;
-  bottom: 20px;
+  bottom: 15%;
   transform: translate(-50%, -50%);
   margin: 0 auto;
 }
@@ -116,8 +116,6 @@
   grid-gap: none;
   justify-content: center;
   border-radius: 5px;
-
-  width: 100%;
 }
 
 /* glowing animation for goals */
@@ -141,39 +139,9 @@
   }
 }
 
-/* #goalBox:before {
-  content: '';
-  background: linear-gradient(45deg, var(--primary-color), #68ad94, var(--sidebar-transparent));
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 800%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 100s linear infinite;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 400% 0;
-  }
-
-  100% {
-    background-position: 0 0;
-  }
-} */
-
 /* checkmark size */
 .flamingCheckmark {
-  height: 8vw;
+  height: 7vw;
   width: auto;
   z-index: 0;
 }
@@ -224,8 +192,9 @@
 .welcome {
   display: flexbox;
   position: absolute;
-  top: 50%;
+  position: fixed;
   left: 50%;
+  bottom: 40%;
   transform: translate(-50%, -50%);
   font-size: 5em;
   align-items: center;
@@ -494,9 +463,8 @@
 .pinkClouds {
   width: 100%;
 }
-
 /* SETTINGS END */
-/* SIGN-UP/SIGNIN PAGE */
+/* SIGN-UP/SIGNIN PAGE signup start */
 *,
 *:after,
 *:before {
@@ -504,7 +472,7 @@
 }
 
 #signupBody {
-  background-image: url('/images/backgrounds/stormyDock.jpeg');
+  background-image: url('/images/settings/pinkClouds.jpg'), url(https://jdsmith2004.github.io/personal_website/images/settings/pinkClouds.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -566,6 +534,7 @@
   width: 100%;
   place-self: center;
   /* box sizing */
+  border-radius: 25px;
 }
 
 #sign-up-form h1,
@@ -667,3 +636,4 @@
   display: block;
   padding: 15px;
 }
+/* signup end */

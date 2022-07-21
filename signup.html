@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="images/logo/logoV1.png" />
-    <link rel="stylesheet" type="text/css" href="styles/index.css" />
-    <title>Sign-In</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo/logoV1.png" />
+  <link rel="stylesheet" type="text/css" href="styles/index.css" />
+  <title>Sign-In</title>
 
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- scripts and styles  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/index.css" />
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
@@ -16,12 +20,12 @@
   <script>
     var firebaseConfig = {
       apiKey: "AIzaSyCyRULcF-4DAFzapesMfowJLY0F7R8ddZg",
-	    authDomain: "obliteration-b71e1.firebaseapp.com",
-	    projectId: "obliteration-b71e1",
-    	storageBucket: "obliteration-b71e1.appspot.com",
-    	messagingSenderId: "259747363387",
-	    appId: "1:259747363387:web:e05ed2c11420566bdbfa1e",
-	    measurementId: "G-C7FT1KSJB1"
+      authDomain: "obliteration-b71e1.firebaseapp.com",
+      projectId: "obliteration-b71e1",
+      storageBucket: "obliteration-b71e1.appspot.com",
+      messagingSenderId: "259747363387",
+      appId: "1:259747363387:web:e05ed2c11420566bdbfa1e",
+      measurementId: "G-C7FT1KSJB1"
     };
     firebase.initializeApp(firebaseConfig);
   </script>
@@ -29,50 +33,49 @@
   <script src="scripts/signup.js" defer></script>
   <!-- <script src="scripts/signupAnimations.js" defer></script> -->
 </head>
+
 <body id="signupBody">
-  
+
   <div class="form-container">
-    <!-- <div id="preferredAction">
-      <div>Welcome</div>
-      <button id='email-sign-in'>Sign In With Email</button>
-      <span>No Account?: </span>
-      <button id='email-sign-up'>Sign Up</button>
-    </div> -->
     <form id="sign-up-form">
-        <h1>Sign Up</h1>
-        <div class="field">
-          <label for="name">Name:</label>
-          <input type="text" id="signUpName" name="name" placeholder="Enter your fullname" value="jeffrey"/>
-          <small></small>
-        </div>
-        <div class="field">
-          <label for="email">Email:</label>
-          <input type="text" id="signUpEmail" name="email" placeholder="Enter your email address" value="swampfirejeffrey@gmail.com"/>
-          <small></small>
-        </div>
-        <div class="field">
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="signUpPassword" placeholder="Super Top Secret Password" value="123456"/>
-          <small class="signUpErrorMessage"></small>
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
-      <form id="sign-in-form">
-        <h1>Sign In</h1>
-        <div class="field">
-          <label for="email">Email:</label>
-          <input type="text" id="signInEmail" name="email" placeholder="Enter your email address" value="swampfirejeffrey@gmail.com"/>
-          <small></small>
-        </div>
-        <div class="field">
-          <label for="password">Password:</label>
-          <input type="password" name="signInPassword" id="password" placeholder="Super Top Secret Password" value="123456"/>
-          <small class="signInErrorMessage"></small>
-        </div>
-        <button type="submit">Sign In</button>
-      </form>
-    </div>
-      <a href="#" class="logout-button" display="hidden">Sign Out</a>
+      <h1>Sign Up</h1>
+      <div class="field">
+        <label for="name">Name:</label>
+        <input type="text" id="signUpName" name="name" placeholder="Enter your fullname"  />
+        <small></small>
+      </div>
+      <div class="field">
+        <label for="email">Email:</label>
+        <input type="text" id="signUpEmail" name="email" placeholder="Enter your email address"
+           />
+        <small></small>
+      </div>
+      <div class="field">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="signUpPassword" placeholder="Super Top Secret Password"
+           />
+        <small class="signUpErrorMessage"></small>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+    <form id="sign-in-form">
+      <h1>Sign In</h1>
+      <div class="field">
+        <label for="email">Email:</label>
+        <input type="text" id="signInEmail" name="email" placeholder="Enter your email address"
+           />
+        <small></small>
+      </div>
+      <div class="field">
+        <label for="password">Password:</label>
+        <input type="password" name="signInPassword" id="password" placeholder="Super Top Secret Password"
+           />
+        <small class="signInErrorMessage"></small>
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+  <button href="#" class="logout-button">Sign Out</button>
 </body>
 
 </html>
