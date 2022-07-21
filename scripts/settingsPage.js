@@ -1,3 +1,9 @@
+const returnHome = document.querySelector('#returnHome')
+returnHome.addEventListener("click", () => {
+  console.log('success')
+  location.href = 'index.html'
+});
+
 function openCity(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
